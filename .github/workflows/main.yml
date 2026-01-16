@@ -18,3 +18,9 @@ jobs:
      
       - name: package
         run: mvn package
+
+      - name: build-artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-artifact
+          path: target/
