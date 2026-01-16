@@ -1,5 +1,4 @@
 import org.junit.jupiter.api.Test;
-
 import com.imt.mines.BankAccount;
 
 import static org.junit.jupiter.api.Assertions.*;

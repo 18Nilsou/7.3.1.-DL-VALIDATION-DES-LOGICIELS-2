@@ -47,8 +47,8 @@ public class BankAccount {
 <span class="nc" id="L47">		accountHolder = initHolder;</span>
 <span class="nc" id="L48">	}</span>
 
-	public BankAccount(int accountNumber, double balance, double withdrawLimit, String dateCreated,
-<span class="nc" id="L51">			String accountHolder) throws Exception {</span>
+<span class="nc" id="L50">	public BankAccount(int accountNumber, double balance, double withdrawLimit, String dateCreated,</span>
+			String accountHolder) throws Exception {
 <span class="nc" id="L52">		Person Person = new Person(accountHolder);</span>
 <span class="nc" id="L53">		initMoneyAmount = 0;</span>
 <span class="nc" id="L54">		this.withdrawLimit = withdrawLimit;</span>
@@ -145,16 +145,16 @@ public class BankAccount {
 <span class="fc" id="L145">        balance = balance - withdrawAmount;</span>
 <span class="fc" id="L146">        success = true;</span>
 <span class="fc" id="L147">        amountWithdrawn += withdrawAmount;</span>
-    } else {
+<span class="fc" id="L148">    } else {</span>
 <span class="fc" id="L149">        success = false;</span>
     }
 <span class="fc" id="L151">    return success;</span>
 }
 
 public boolean isWithdrawMoneyAllowed(double withdrawAmount) {
-<span class="fc bfc" id="L155" title="All 6 branches covered.">    return withdrawAmount &gt;= 0</span>
-        &amp;&amp; balance &gt;= withdrawAmount
-        &amp;&amp; withdrawAmount + amountWithdrawn &lt;= withdrawLimit;
+<span class="fc bfc" id="L155" title="All 4 branches covered.">    return withdrawAmount &gt;= 0</span>
+<span class="fc bfc" id="L156" title="All 2 branches covered.">        &amp;&amp; balance &gt;= withdrawAmount</span>
+<span class="fc" id="L157">        &amp;&amp; withdrawAmount + amountWithdrawn &lt;= withdrawLimit;</span>
 }
 
 	public void setAccountNumber(int accNumber) {
@@ -194,12 +194,12 @@ public boolean isWithdrawMoneyAllowed(double withdrawAmount) {
 <span class="nc" id="L194">				String newEyeColor = fileScanner.next();</span>
 <span class="nc" id="L195">				String newEmail = fileScanner.next();</span>
 <span class="nc" id="L196">				String accountHolder1 = newName + Person.DELIM + gender + Person.DELIM + newAge + Person.DELIM</span>
-						+ newHeight + Person.DELIM + newWeight + Person.DELIM + newHairColor + Person.DELIM
-						+ newEyeColor + Person.DELIM + newEmail;
+<span class="nc" id="L197">						+ newHeight + Person.DELIM + newWeight + Person.DELIM + newHairColor + Person.DELIM</span>
+<span class="nc" id="L198">						+ newEyeColor + Person.DELIM + newEmail;</span>
 <span class="nc" id="L199">				Person accountHolderManager = new Person(accountHolder1);</span>
 <span class="nc" id="L200">				tmpAccount.setAccountHolder(accountHolderManager);</span>
 <span class="nc" id="L201">				accountsLoaded = accManager.addAccount(tmpAccount, 1);</span>
-<span class="nc" id="L202">			}</span>
+			}
 <span class="nc" id="L203">			fis.close();</span>
 
 <span class="nc" id="L205">		} catch (Exception e) {</span>
@@ -211,7 +211,7 @@ public boolean isWithdrawMoneyAllowed(double withdrawAmount) {
 
 <span class="nc" id="L212">				} catch (IOException ex) {</span>
 					// ignore
-<span class="nc" id="L214">				}</span>
+				}
 			}
 <span class="nc bnc" id="L216" title="All 2 branches missed.">			if (fileScanner != null) {</span>
 <span class="nc" id="L217">				fileScanner.close();</span>
@@ -223,8 +223,8 @@ public boolean isWithdrawMoneyAllowed(double withdrawAmount) {
 	public String toString() {
 
 <span class="nc" id="L225">		String bankInfo = &quot;Your Account number is &quot; + accountNumber + &quot; &quot; + &quot;Your Balance is: &quot; + balance + &quot; &quot;</span>
-				+ &quot;Date account created is: &quot; + dateCreated + &quot; &quot; + &quot;Withdraw limit is: &quot; + withdrawLimit + &quot; &quot;
-				+ &quot;Your account holder info is: &quot; + accountHolder;
+<span class="nc" id="L226">				+ &quot;Date account created is: &quot; + dateCreated + &quot; &quot; + &quot;Withdraw limit is: &quot; + withdrawLimit + &quot; &quot;</span>
+<span class="nc" id="L227">				+ &quot;Your account holder info is: &quot; + accountHolder;</span>
 
 <span class="nc" id="L229">		return bankInfo;</span>
 	}
