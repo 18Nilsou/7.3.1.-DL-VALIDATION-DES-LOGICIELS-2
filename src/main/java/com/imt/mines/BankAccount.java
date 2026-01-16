@@ -151,7 +151,7 @@ public class BankAccount {
     return success;
 }
 
-private boolean isWithdrawMoneyAllowed(double withdrawAmount) {
+public boolean isWithdrawMoneyAllowed(double withdrawAmount) {
     return withdrawAmount >= 0
         && balance >= withdrawAmount
         && withdrawAmount + amountWithdrawn <= withdrawLimit;
