@@ -1,3 +1,16 @@
+# Exercice 11 : Cucumber pour BankAccount
+
+## Scénario testé
+```
+Feature: Basic bank account behavior
+  Scenario: A new account has zero balance
+    Given I have a new bank account
+    When I check its balance
+    Then the balance should be 0
+```
+
+## Résultat d'exécution
+```
 nils@macbook-air-de-nils bank-application % mvn test
 [INFO] Scanning for projects...
 [INFO] 
@@ -51,3 +64,4 @@ Scenario: A new account has zero balance # src/test/resources/features/bank_acco
 [INFO] Total time:  1.295 s
 [INFO] Finished at: 2026-01-16T11:31:36+01:00
 [INFO] ------------------------------------------------------------------------
+```
